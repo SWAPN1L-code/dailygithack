@@ -2,7 +2,7 @@ import SwiftUI
 import Foundation
 import Combine
 
-// MARK: - Models
+//  - Models
 struct GitHubConfig: Codable {
     var token: String
     var owner: String
@@ -48,7 +48,7 @@ struct ContributionStats {
     }
 }
 
-// MARK: - GitHub Service
+//  GitHub Service
 class GitHubService: ObservableObject {
     @Published var isLoading = false
     @Published var lastError: String?
@@ -141,7 +141,7 @@ class GitHubService: ObservableObject {
     }
 }
 
-// MARK: - Log Manager
+//   Log Manager
 class LogManager: ObservableObject {
     @Published var entries: [ContributionEntry] = []
     @Published var stats = ContributionStats()
@@ -246,7 +246,7 @@ class LogManager: ObservableObject {
     }
 }
 
-// MARK: - Custom Message Generator
+//  Custom Message Generator
 class MessageGenerator {
     static let motivationalMessages = [
         "Keep the streak alive! 🔥",
@@ -306,7 +306,7 @@ class MessageGenerator {
     }
 }
 
-// MARK: - Main View
+//  Main View
 struct ContentView: View {
     @StateObject private var gitHubService = GitHubService()
     @StateObject private var logManager = LogManager()
@@ -496,7 +496,7 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Supporting Views
+//- Supporting Views
 struct StatCard: View {
     let title: String
     let value: String
